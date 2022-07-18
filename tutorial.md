@@ -6,6 +6,7 @@
 
 In this tutorial, we will use the activity recognition program to code a program that detects your activity level.
 On the screen are the control statements in which you will put code blocks. 
+The program sets ``||variables: activityLevel||`` to 0 when it starts.
 
 ```template
 let activityLevel = 0
@@ -24,19 +25,48 @@ In the ``||activityRecognition:activityRecognition||`` tab, you will see the ``|
 The program continuously predicts the current activity and stores it in that block for you: s for standing, w for walking, and r for running.
 
 ## Step 3
-We want the ``||variables: step||`` count to increase by 1 every time you take a step. To accurately do that, we will use the ``||moveSMART:acceleration_strength||`` value in the moveSMART tab.
+We want the ``||variables: activityLevel||`` to increase by different values depending on what the current activity is.
+Use the ``||logic: if true then||`` and ``||logic: =||``, and ``||activityRecognition:find_activity||`` blocks to code a segment that increases activity level by 0.1 when standing, 0.2 when walking, and 0.3 when running.
 
-Use ``||logic: > ||`` to code a block that returns ``||logic: true||`` when ``||moveSMART:acceleration_strength||`` is bigger than 1.5.
-Hint: Here we have chosen the value 1.5 for you as a starting point. You will have a chance to change it later!
 ```blocks
-activityRecognition.show(activityRecognition.findActivity())
+basic.forever(function () {
+    if (activityRecognition.findActivity() == "s") {
+        activity_level += 0.1
+    }
+    if (activityRecognition.findActivity() == "w") {
+        activity_level += 0.2
+    }
+    if (activityRecognition.findActivity() == "r") {
+        activity_level += 0.3
+    }
+})
 ```
 
 ## Step 4
-Now use the blocks ``||logic: if true then||`` and ``||variables: step||`` so that the step count increases whenever the acceleration strength is bigger than 1.5.
+Now you will code the buttons to control the tool.
+Code a segment that shows the current activity type when you press A.
+
+```blocks
+input.onButtonPressed(Button.A, function () {
+    activityRecognition.show(activityRecognition.findActivity())
+})
+```
 
 ## Step 5
-To complete the step counter, put the code in the mouth of the ``||logic: if counting then||`` block.
+Code a segment that shows the current activity level when you press B.
+```blocks
+input.onButtonPressed(Button.B, function () {
+    basic.showNumber(activity_level)
+})
+```
 
 ## Step 6
-Now download your code onto the microbit and experiment whether the threshold value is good! Try walking around thirty steps and check the accuracy. Adjust the threshold value from 1.5 and download the program again as necessary.
+Finally, code a segment that resets the activity level to 0 when you press A and B together.
+```blocks
+input.onButtonPressed(Button.AB, function () {
+    activity_level = 0
+})
+```
+
+## Step 7
+Now download your code onto the microbit and experiment with different activities, checking what your activity level is!
