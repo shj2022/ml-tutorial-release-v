@@ -35,7 +35,7 @@ The program continuously predicts the current activity and stores it in that blo
 
 ## Step 3
 We want the ``||variables: activityLevel||`` to increase by different values depending on what the current activity is.
-Use the ``||logic: if true then||`` and ``||logic: =||``, and ``||activityRecognition:find_activity||`` blocks to code a segment that increases activity level by 0.1 when standing, 0.2 when walking, and 0.3 when running.
+Drag and drop the ``||activityRecognition:find_activity||`` blocks in the appropriate places to code the segment in the ``||basic:forever||`` block that increases activity level by 0.1 when standing, 0.2 when walking, and 0.3 when running.
 
 ```blocks
 basic.forever(function () {
