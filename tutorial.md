@@ -9,6 +9,7 @@ On the screen are the control statements in which you will put code blocks.
 
 ```template
 input.onButtonPressed(Button.A, function () {
+    activityRecognition.show(activityRecognition.findActivity())
 })
 input.onButtonPressed(Button.B, function () {
 })
