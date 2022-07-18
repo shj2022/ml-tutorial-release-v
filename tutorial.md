@@ -9,7 +9,6 @@ On the screen are the control statements in which you will put code blocks.
 
 ```template
 input.onButtonPressed(Button.A, function () {
-    activityRecognition.show(activityRecognition.findActivity())
 })
 input.onButtonPressed(Button.B, function () {
 })
@@ -29,7 +28,7 @@ We want the ``||variables: step||`` count to increase by 1 every time you take a
 Use ``||logic: > ||`` to code a block that returns ``||logic: true||`` when ``||moveSMART:acceleration_strength||`` is bigger than 1.5.
 Hint: Here we have chosen the value 1.5 for you as a starting point. You will have a chance to change it later!
 ```blocks
-if (moveSMART.acceleration_strength() > 1.5) {}
+activityRecognition.show(activityRecognition.findActivity())
 ```
 
 ## Step 4
