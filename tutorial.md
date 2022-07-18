@@ -8,6 +8,7 @@ In this tutorial, we will use the activity recognition program to code a program
 On the screen are the control statements in which you will put code blocks. 
 
 ```template
+let activity_level = 0
 input.onButtonPressed(Button.A, function () {
 })
 input.onButtonPressed(Button.B, function () {
