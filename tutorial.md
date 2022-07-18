@@ -9,7 +9,7 @@ On the screen are the control statements in which you will put code blocks.
 The program sets ``||variables: activityLevel||`` to 0 when it starts.
 
 ```template
-let activityLevel = 0
+let activity_level = 0
 input.onButtonPressed(Button.A, function () {
 })
 input.onButtonPressed(Button.B, function () {
