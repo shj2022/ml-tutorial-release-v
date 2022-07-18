@@ -17,6 +17,15 @@ input.onButtonPressed(Button.B, function () {
 input.onButtonPressed(Button.AB, function () {
 })
 basic.forever(function () {
+if ( == "s") {
+        activity_level += 
+    }
+    if ( == "w") {
+        activity_level += 
+    }
+    if ( == "r") {
+        activity_level += 
+    }
 })
 ```
 
