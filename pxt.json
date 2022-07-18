@@ -1,6 +1,6 @@
 {
     "name": "ML Tutorial Release V",
-    "version": "0.0.11",
+    "version": "0.0.12",
     "description": "",
     "dependencies": {
         "core": "*",
